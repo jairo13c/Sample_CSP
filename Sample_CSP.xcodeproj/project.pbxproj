@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4216DAD31FCF364A00AF5DFB /* InternetMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DAD21FCF364A00AF5DFB /* InternetMasterViewController.swift */; };
+		4216DAD51FCF3AC000AF5DFB /* InternetDatailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DAD41FCF3AC000AF5DFB /* InternetDatailViewController.swift */; };
 		423ADFFE1FB3942300820416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423ADFFD1FB3942300820416 /* AppDelegate.swift */; };
 		423AE0001FB3942300820416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423ADFFF1FB3942300820416 /* ViewController.swift */; };
 		423AE0031FB3942300820416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423AE0011FB3942300820416 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4216DAD21FCF364A00AF5DFB /* InternetMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetMasterViewController.swift; sourceTree = "<group>"; };
+		4216DAD41FCF3AC000AF5DFB /* InternetDatailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDatailViewController.swift; sourceTree = "<group>"; };
 		423ADFFA1FB3942300820416 /* Sample_CSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample_CSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423ADFFD1FB3942300820416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		423ADFFF1FB3942300820416 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				423AE0171FB3974A00820416 /* NameOfViewController.swift */,
 				423AE0191FB3993300820416 /* AlgorithmViewController.swift */,
 				424129641FCC98360015D549 /* AbstractionViewController.swift */,
+				4216DAD21FCF364A00AF5DFB /* InternetMasterViewController.swift */,
+				4216DAD41FCF3AC000AF5DFB /* InternetDatailViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 				423AE0181FB3974A00820416 /* NameOfViewController.swift in Sources */,
 				423AE01A1FB3993300820416 /* AlgorithmViewController.swift in Sources */,
 				424129651FCC98360015D549 /* AbstractionViewController.swift in Sources */,
+				4216DAD51FCF3AC000AF5DFB /* InternetDatailViewController.swift in Sources */,
 				423ADFFE1FB3942300820416 /* AppDelegate.swift in Sources */,
+				4216DAD31FCF364A00AF5DFB /* InternetMasterViewController.swift in Sources */,
 				427919C51FC363DD00E4660F /* Ducking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
