@@ -51,7 +51,17 @@ public class DrawingView: UIView
     }
     public func drawHAppyTree() -> Void
     {
+        let bobRoss = UIBezierPath()
         
+        bobRoss.move(to: CGPoint(x: 80, y: 50))
+        bobRoss.addLine(to: CGPoint(x: 120, y: 150))
+        bobRoss.addLine(to: CGPoint(x: 40, y: 150))
+        bobRoss.close()
+        UIColor(patternImage: UIImage(named:"tree")!).setFill()
+        UIColor.brown.setStroke()
+        bobRoss.lineWidth = 2.0
+        bobRoss.fill()
+        bobRoss.stroke()
     }
 }
 

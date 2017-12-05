@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false}
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard let topAsDetailController = secondaryAsNavController.topViewController as? InterntDetailViewController else { return false}
         if topAsDetailController.detailAddress == nil
         {
