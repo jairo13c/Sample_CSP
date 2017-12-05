@@ -12,11 +12,11 @@ public class InternetMasterViewController: UITableViewController
 {
     
     
-    private (set lazy var intrnetTopics : [String] =
+    private(set lazy var internetTopics : [String] =
     {
         return [
         
-        "Definition"
+        "Definition",
         "CSP",
         "CTEC",
         "Canyons",
@@ -29,17 +29,17 @@ public class InternetMasterViewController: UITableViewController
     
     private func setup() -> Void
     {
-        addresss = [
+        addresses = [
             "http:www.google.com",
             "http:www.google.com",
             "http:www.google.com",
             "http:www.gogle.com",
-            "http:www.google.com",
+            "http:www.gogle.com",
             "http:www.google.com",
             "http:www.google.com"
             
         ]
-        if let splitVi = splitViewController
+        if let splitView = splitViewController
         {
             let currentControllers = splitView.viewControllers
             detailViewController = currentControllers[0] as? InternetDetailViewController
@@ -64,7 +64,7 @@ public class InternetMasterViewController: UITableViewController
         return 1
         
     }
-    override public func tableView (_ tableView : UITableView, numberOFRowsInSection section: Int) -> Int
+    override public func tableView (_ tableView : UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return internetTopics.count
     }
@@ -82,9 +82,9 @@ public class InternetMasterViewController: UITableViewController
         {
             if let indexPath = self.tableView.indexPathForSelectedRow
             {
-                let urlString = address[ indexPath.row]
+                let urlString = address [indexPath.row]
                 let pageText : String
-                if indxPath.row == 0
+                if indexPath.row == 0
                 {
                     pageText = " All the efinition you wrote"
                 }
@@ -101,8 +101,8 @@ public class InternetMasterViewController: UITableViewController
                 
             }
         }
-    }
-}
+
+
 
 
 

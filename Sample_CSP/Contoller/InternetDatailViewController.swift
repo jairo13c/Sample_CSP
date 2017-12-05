@@ -12,7 +12,17 @@ import WebKit
 public class InternetDatailViewController: UIViewController
 {
 
+    @IBOutlet weak var webViewer: WKWebView!
+    @IBOutlet weak var textLabel: UILabel!
     var detailAddress : String?
+    {
+        didSet
+        {
+            configureDetailView()
+        }
+    }
+    
+    var detailText : String?
     {
         didSet
         {
@@ -54,14 +64,14 @@ public class InternetDatailViewController: UIViewController
         }
         if detailText != nil
         {
-            if let currentText = UITextView
+            if let currentText = textLabel
             {
                 currentText.text = detailText
             }
         }
         else
         {
-            if let currentText = UITextView
+            if let currentText = textLabel
             {
                 currentText = "jairo's CSP app internt screen"
             }

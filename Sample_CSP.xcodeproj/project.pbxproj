@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		420E7D0F1FD1F839004E2201 /* AppDelegete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420E7D0E1FD1F839004E2201 /* AppDelegete.swift */; };
 		4216DAD31FCF364A00AF5DFB /* InternetMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DAD21FCF364A00AF5DFB /* InternetMasterViewController.swift */; };
 		4216DAD51FCF3AC000AF5DFB /* InternetDatailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DAD41FCF3AC000AF5DFB /* InternetDatailViewController.swift */; };
 		423ADFFE1FB3942300820416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423ADFFD1FB3942300820416 /* AppDelegate.swift */; };
@@ -19,10 +18,10 @@
 		423AE01A1FB3993300820416 /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423AE0191FB3993300820416 /* AlgorithmViewController.swift */; };
 		424129651FCC98360015D549 /* AbstractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424129641FCC98360015D549 /* AbstractionViewController.swift */; };
 		427919C51FC363DD00E4660F /* Ducking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427919C41FC363DD00E4660F /* Ducking.swift */; };
+		42E00B491FD72ACB00966B4A /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E00B481FD72ACB00966B4A /* DrawingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		420E7D0E1FD1F839004E2201 /* AppDelegete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegete.swift; sourceTree = "<group>"; };
 		4216DAD21FCF364A00AF5DFB /* InternetMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetMasterViewController.swift; sourceTree = "<group>"; };
 		4216DAD41FCF3AC000AF5DFB /* InternetDatailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDatailViewController.swift; sourceTree = "<group>"; };
 		423ADFFA1FB3942300820416 /* Sample_CSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample_CSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +35,8 @@
 		423AE0191FB3993300820416 /* AlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
 		424129641FCC98360015D549 /* AbstractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractionViewController.swift; sourceTree = "<group>"; };
 		427919C41FC363DD00E4660F /* Ducking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ducking.swift; sourceTree = "<group>"; };
+		42E00B481FD72ACB00966B4A /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		42E00B4A1FD72AFE00966B4A /* cute.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cute.jpg; path = ../../../../Downloads/cute.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +69,9 @@
 		423ADFFC1FB3942300820416 /* Sample_CSP */ = {
 			isa = PBXGroup;
 			children = (
+				42E00B471FD72A1800966B4A /* view */,
 				427919C11FC361A800E4660F /* protocol */,
 				423AE0161FB396D300820416 /* Contoller */,
-				423AE0011FB3942300820416 /* Main.storyboard */,
 				423ADFFB1FB3942300820416 /* Products */,
 				423AE0061FB3942300820416 /* LaunchScreen.storyboard */,
 				423AE0091FB3942300820416 /* Info.plist */,
@@ -89,7 +90,6 @@
 				424129641FCC98360015D549 /* AbstractionViewController.swift */,
 				4216DAD21FCF364A00AF5DFB /* InternetMasterViewController.swift */,
 				4216DAD41FCF3AC000AF5DFB /* InternetDatailViewController.swift */,
-				420E7D0E1FD1F839004E2201 /* AppDelegete.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -97,6 +97,7 @@
 		424129661FCCA85F0015D549 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				42E00B4A1FD72AFE00966B4A /* cute.jpg */,
 				423AE0041FB3942300820416 /* Assets.xcassets */,
 			);
 			path = resources;
@@ -108,6 +109,15 @@
 				427919C41FC363DD00E4660F /* Ducking.swift */,
 			);
 			path = protocol;
+			sourceTree = "<group>";
+		};
+		42E00B471FD72A1800966B4A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				423AE0011FB3942300820416 /* Main.storyboard */,
+				42E00B481FD72ACB00966B4A /* DrawingView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +195,10 @@
 				423AE0001FB3942300820416 /* ViewController.swift in Sources */,
 				423AE0181FB3974A00820416 /* NameOfViewController.swift in Sources */,
 				423AE01A1FB3993300820416 /* AlgorithmViewController.swift in Sources */,
-				420E7D0F1FD1F839004E2201 /* AppDelegete.swift in Sources */,
 				424129651FCC98360015D549 /* AbstractionViewController.swift in Sources */,
 				4216DAD51FCF3AC000AF5DFB /* InternetDatailViewController.swift in Sources */,
 				423ADFFE1FB3942300820416 /* AppDelegate.swift in Sources */,
+				42E00B491FD72ACB00966B4A /* DrawingView.swift in Sources */,
 				4216DAD31FCF364A00AF5DFB /* InternetMasterViewController.swift in Sources */,
 				427919C51FC363DD00E4660F /* Ducking.swift in Sources */,
 			);

@@ -9,18 +9,18 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISpllitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       if let SplitViewCoroller = window!.rootViewController as? UISplitViewController
+       if let splitViewController = window!.rootViewController as? UISplitViewController
        {
-        let navegationControler.splitVIewontroller.viewControllers[splitiewCotroller.viewControllers.count - 1] as! UINavigationController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count - 1] as! UINavigationController
         
-        navegationContoller.topControer!.navigatinItem.LeftBarButtonItem = splitViewController.displayModeuttonItem
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
     }
         return true
@@ -46,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISpllitViewControllerDel
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-        guard let secoundaryAsNavigationController = secoundViewController as? UINavitionController else { return false}
-        guard let topAsDataiilController = secoundaryAsNavigationController.topViewController as? InterntDetailViewController else { return false}
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false}
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? InterntDetailViewController else { return false}
         if topAsDetailController.detailAddress == nil
         {
             return true
