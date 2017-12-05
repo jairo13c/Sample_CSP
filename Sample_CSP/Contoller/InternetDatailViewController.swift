@@ -11,7 +11,17 @@ import WebKit
 
 public class InternetDatailViewController: UIViewController
 {
+
+    var detailAddress : String?
+    {
+        didSet
+        {
+            configureDetailView()
+        }
+    }
+    
     override public func viewDidLoad()
+        
     {
         super.viewDidLoad()
         setup()
@@ -22,4 +32,53 @@ public class InternetDatailViewController: UIViewController
     {
         
     }
+    
+     private func configureDetailView() -> Void
+    {
+        if detailAddress != nil
+        {
+            if let currentWebView = webViewer
+            {
+                let currentURL = URL (String: detailAddress!)
+                let currentWebRequest = URLRequest( url: currentURL!)
+                currentWebView.load(currentWebRequest)
+            }
+        }
+        else
+        {
+            if let currentWebView = webViewer
+            {
+                let currentURL = URL (String: "http//www.google.com")
+                currentWebView.load(URLRequest(url:currentURL!))
+            }
+        }
+        if detailText != nil
+        {
+            if let currentText = UITextView
+            {
+                currentText.text = detailText
+            }
+        }
+        else
+        {
+            if let currentText = UITextView
+            {
+                currentText = "jairo's CSP app internt screen"
+            }
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

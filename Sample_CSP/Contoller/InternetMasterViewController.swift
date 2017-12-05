@@ -8,8 +8,10 @@
 
 import UIKit
 
-class InternetMasterViewController: UITableViewController
+public class InternetMasterViewController: UITableViewController
 {
+    
+    
     private (set lazy var intrnetTopics : [String] =
     {
         return [
@@ -27,7 +29,23 @@ class InternetMasterViewController: UITableViewController
     
     private func setup() -> Void
     {
-        
+        addresss = [
+            "http:www.google.com",
+            "http:www.google.com",
+            "http:www.google.com",
+            "http:www.gogle.com",
+            "http:www.google.com",
+            "http:www.google.com",
+            "http:www.google.com"
+            
+        ]
+        if let splitVi = splitViewController
+        {
+            let currentControllers = splitView.viewControllers
+            detailViewController = currentControllers[0] as? InternetDetailViewController
+            
+            
+        }
     }
     override public func viewDidLoad()
     {
@@ -50,12 +68,39 @@ class InternetMasterViewController: UITableViewController
     {
         return internetTopics.count
     }
-    override public func tableView: UITableView, cellForRowAtt indexPath: IndexPath)  -> UITableViewCell
+    override public func tableView(_ UITableView, UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
     let cell = tableView.dequeueReusbleCell(withIndentifier: "reuseIdentifier", for: indexPath)
-    let currentText = internetTopics[indePAth.row]
-    cell.textLAbel!.text = currentText
+    let currentText = internetTopics[indexPath.row]
+    cell.textLabel!.text = currentText
+   
     return cell
+    }
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if seg.identifier! == "showDetail"
+        {
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                let urlString = address[ indexPath.row]
+                let pageText : String
+                if indxPath.row == 0
+                {
+                    pageText = " All the efinition you wrote"
+                }
+                else
+                }
+                    pgeText = innternetTopics[indexPath.row]
+                }
+                let controller = segue.destination as! InternetDetailViewController
+                    
+                    controller.detailAddress = urlString
+                    controller.detaillText = pageText
+                    controller.navigationItem.leftarButtonItem = splitViewController?.displayModeButtonItem
+                    controller.navigation.leftItemsSuplementBackButton = true
+                
+            }
+        }
     }
 }
 
