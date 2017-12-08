@@ -63,6 +63,17 @@ public class DrawingView: UIView
         bobRoss.fill()
         bobRoss.stroke()
     }
+    
+    private func drawTurtle() -> Void
+    {
+        let logo = UIBezierPath()
+        UIColor.white.setFill()
+        logo.move(to: CGPoint(x: 50, y: 250))
+        logo.addLine(to: CGPoint(x:10, y: 300))
+        logo.addLine(to: CGPoint( x: 50, y: 350))
+        logo.close()
+        logo.fill()
+    }
 }
 
 

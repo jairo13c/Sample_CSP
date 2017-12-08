@@ -12,7 +12,7 @@ public class InternetMasterViewController: UITableViewController
 {
     
     
-    private(set lazy var internetTopics : [String] =
+    private lazy var internetTopics : [String] =
     {
         return [
         
@@ -25,7 +25,7 @@ public class InternetMasterViewController: UITableViewController
         ]
     }()
     
-    private var detailViewController : InternetDatailViewContrroller?
+    private var detailViewController : InternetDatailViewController?
     
     private func setup() -> Void
     {

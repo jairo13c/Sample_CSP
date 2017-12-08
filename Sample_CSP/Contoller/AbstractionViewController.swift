@@ -26,20 +26,20 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
     //helper method to retive he correct ViewController
     private func newAbstractionViewController(abstractionLevel : String) -> UIViewController
 {
-    return UIStorybord(name: "main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
+    return UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
     
     }
     override public func viewDidLoad()
     {
-        super.ViewDidLoad()
+        super.viewDidLoad()
         dataSource = self
         
         if let firstViewController = orderedAbstractionViews.first
         {
-            setViewController([firstViewController],
-                               direction: .forwod,
+            setViewControllers([firstViewController],
+                               direction: forwod,
                                animated: true,
-                               completio:nil)
+                               completion:nil)
             
         }
     }
@@ -68,7 +68,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         return orderedAbstractionViews[nextIndex]
 
 }
-    public func presentationIndex(for pageViewController: UIPageViewControllerIndex = orderedAbstractionViews.index(of: firstViewController)
+    public func presentationIndex(for pageViewController: UIPageViewControllerIndex = orderedAbstractionViews.index(of: firstViewController),
     else
     {
         return orderedAbstractionViews.count
@@ -76,7 +76,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
     return firstViewControllerIndex
     
     }
-}
+
     
     
 
