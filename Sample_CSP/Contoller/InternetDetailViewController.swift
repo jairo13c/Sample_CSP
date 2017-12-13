@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-public class InternetDatailViewController: UIViewController
+public class InternetDetailViewController: UIViewController
 {
 
     @IBOutlet weak var webViewer: WKWebView!
@@ -40,7 +40,8 @@ public class InternetDatailViewController: UIViewController
     
         private func setup() -> Void
     {
-        
+        super.viewDidLoad()
+        configureDetailView()
     }
     
      private func configureDetailView() -> Void
@@ -49,8 +50,8 @@ public class InternetDatailViewController: UIViewController
         {
             if let currentWebView = webViewer
             {
-                let currentURL = URL (String: detailAddress!)
-                let currentWebRequest = URLRequest( url: currentURL!)
+                let currentURL = URL(String: detailAddress!)
+                let currentWebRequest = URLRequest(url: currentURL!)
                 currentWebView.load(currentWebRequest)
             }
         }
@@ -58,26 +59,25 @@ public class InternetDatailViewController: UIViewController
         {
             if let currentWebView = webViewer
             {
-                let currentURL = URL (String: "http//www.google.com")
+                let currentURL = URL (string: "http//www.google.com")
                 currentWebView.load(URLRequest(url:currentURL!))
             }
         }
         if detailText != nil
         {
-            if let currentText = textLabel
+            if let currentText = textView
             {
                 currentText.text = detailText
             }
         }
         else
         {
-            if let currentText = textLabel
+            if let currentText = textView
             {
-                currentText = "jairo's CSP app internt screen"
+                currentText.text = "jairo's CSP app internt screen"
             }
         }
     }
-
 }
 
 

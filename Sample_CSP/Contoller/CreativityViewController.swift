@@ -61,8 +61,6 @@ public class CreativityViewController:UICollectionViewContoller, UICollectionVie
             }
         }
     }
-
-
     override public func viewDidLoad()
     {
         super.viewDidLoad()
@@ -114,7 +112,7 @@ public class CreativityViewController:UICollectionViewContoller, UICollectionVie
         return CGSize(width: widthPerItem, height: widthPerItem)
 
 
-    public func collectionView(_collectionView:UICollectionView,
+        public func collectionView(_collectionView:UICollectionView,
                            layout collectionViewLayout: UICollectionViewLayout,
                            insetForSectionAT section: Int) -> UIEdgeInsets
     {

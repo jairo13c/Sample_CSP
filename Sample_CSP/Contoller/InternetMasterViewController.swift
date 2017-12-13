@@ -12,18 +12,19 @@ public class InternetMasterViewController: UITableViewController
 {
     
     
-    private lazy var internetTopics : [String] =
+    private (set) lazy var internetTopics : [String] =
     {
         return [
-        
-        "Definition",
-        "CSP",
-        "CTEC",
-        "Canyons",
-        "Twitter",
-        "Swift Guide"
+            "Definition",
+            "CSP",
+            "CTEC",
+            "Canyons",
+            "Twitter",
+            "Swift Language Guide"
         ]
     }()
+    
+    private lazy var addresses: [String] = []
     
     private var detailViewController : InternetDatailViewController?
     
@@ -31,12 +32,12 @@ public class InternetMasterViewController: UITableViewController
     {
         addresses = [
             "http:www.google.com",
-            "http:www.google.com",
-            "http:www.google.com",
-            "http:www.gogle.com",
-            "http:www.gogle.com",
-            "http:www.google.com",
-            "http:www.google.com"
+            "https://canyons.instructure.com",
+            "https://student.canyonsdistrict.org",
+            "https://www.foxsports.com",
+            "https://www.facebook.com",
+            "https://www.instagram.com",
+            "https://www.rainbowsymphonystore.com"
             
         ]
         if let splitView = splitViewController
@@ -51,7 +52,7 @@ public class InternetMasterViewController: UITableViewController
     {
         super.viewDidLoad()
         setup()
-        //Uncomment the following line to prese selection between presenttations
+        //Uncomment the following line to prese selection between presentations
         self.clearSelectionViewWillAppear = false
         
     }
@@ -70,7 +71,7 @@ public class InternetMasterViewController: UITableViewController
     }
     override public func tableView(_ UITableView, UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-    let cell = tableView.dequeueReusbleCell(withIndentifier: "reuseIdentifier", for: indexPath)
+    let cell = tableView.dequeueReusbleCell(withIdentifier: "reuseIdentifier", for: indexPath)
     let currentText = internetTopics[indexPath.row]
     cell.textLabel!.text = currentText
    
@@ -78,11 +79,11 @@ public class InternetMasterViewController: UITableViewController
     }
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if seg.identifier! == "showDetail"
+        if segue.identifier! == "showDetail"
         {
             if let indexPath = self.tableView.indexPathForSelectedRow
             {
-                let urlString = address [indexPath.row]
+                let urlString = addresses [indexPath.row]
                 let pageText : String
                 if indexPath.row == 0
                 {
@@ -90,17 +91,18 @@ public class InternetMasterViewController: UITableViewController
                 }
                 else
                 }
-                    pgeText = innternetTopics[indexPath.row]
+                    pageText = internetTopics[indexPath.row]
                 }
                 let controller = segue.destination as! InternetDetailViewController
                     
                     controller.detailAddress = urlString
-                    controller.detaillText = pageText
-                    controller.navigationItem.leftarButtonItem = splitViewController?.displayModeButtonItem
-                    controller.navigation.leftItemsSuplementBackButton = true
+                    controller.detailText = pageText
+                    controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                    controller.navigationItem.leftItemsSupplementBackButton = true
                 
             }
         }
+
 
 
 

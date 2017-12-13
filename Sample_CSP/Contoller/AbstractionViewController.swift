@@ -37,7 +37,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         if let firstViewController = orderedAbstractionViews.first
         {
             setViewControllers([firstViewController],
-                               direction: forwod,
+                               direction: forward,
                                animated: true,
                                completion:nil)
             
