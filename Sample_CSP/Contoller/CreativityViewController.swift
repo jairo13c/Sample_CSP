@@ -98,7 +98,7 @@ public class CreativityViewController:UICollectionViewContoller, UICollectionVie
 
     let art = artSelection[indexPath.row]
     let size = collectionView.bounds.size
-    let widthScale = (size.width / art!.size.with)  * CGFloat(0.80)
+    let widthScale = (size.width / art!.size.width)  * CGFloat(0.80)
     let largeSize = CGSize(width: art!.size.width * widthScale, height: art!.size.height * widthScale)
     
     return largeSize
