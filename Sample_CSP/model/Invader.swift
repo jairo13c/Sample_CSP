@@ -28,7 +28,7 @@ public class Invader: SKSpriteNode
         self.physicsBody?.usesPreciseCollisionDetection = false
         self.physicsBody?.categoryBitMask = CollisionCategories.Invader
         self.physicsBody?.contactTestBitMask = CollisionCategories.PlayerBullet | CollisionCategories.Player
-         self.physicsBody?.collisionBitMask = CollisionCategories.EdgeBody
+        self.physicsBody?.collisionBitMask = CollisionCategories.EdgeBody
         
         
     
@@ -42,6 +42,6 @@ public class Invader: SKSpriteNode
     //MARK: - Invader methods section
     public func fireBullet(scene: SKScene) -> Void
     {
-
+        
     }
 }

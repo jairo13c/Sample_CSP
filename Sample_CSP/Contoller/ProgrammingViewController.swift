@@ -19,16 +19,17 @@ public class ProgrammingViewController: UIViewController
         let gameView = view as! SKView
         
         gameView.showsFPS = true
-        gameView.showNodeCount = true
-        gameView.ignoresSibilingOrder = true
+        gameView.showsNodeCount = true
+        gameView.ignoresSiblingOrder = true
         
         gameScene.scaleMode = .resizeFill
-        gameView.presentScene(GameScene)
+        gameView.presentScene(gameScene)
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

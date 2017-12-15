@@ -8,6 +8,7 @@
 
 import UIKit
 
-class NameOfViewController: NSObject {
+class NameOfViewController: NSObject
+{
 
 }

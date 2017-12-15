@@ -9,18 +9,12 @@
 import UIKit
 import SpriteKit
 
-public class InvaderLaser: Projectile
+public class PlayerLaser: Projectile
 {
     override init(imageName: String, bulletSound:String?)
     {
         super.init(imageName: imageName, bulletSound: bulletSound)
         
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
-        self.physicsBody.?isDynamic = true
-        self.physicsBody.?usesPreciseCollisionCaies.InvaderBulet
-        self.physicsBody.?contactTestBitMask = CollisionCategories.InvaderBullet
-        self.physicsBody.?
-        self.physicsBody.?
     }
     
     required public init?(coder aDecoder: NSCoder)

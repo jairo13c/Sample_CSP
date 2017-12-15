@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CreativityViewController:UICollectionViewContoller, UICollectionViewDelegateFlowLayout
+public class CreativityViewController : UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
     private let reuseIdentifier = "artIdentifier"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 2.0, bottom: 500, right: 20.0)
@@ -71,55 +71,53 @@ public class CreativityViewController:UICollectionViewContoller, UICollectionVie
             return 1
     }
 
-    override public func collectionView(_collectionView: UICollectionView,
+    override public func collectionView(_ collectionView: UICollectionView,
                                          numberOfItemsInSection section: Int) -> Int
     {
         return artSelection.count
     }
    
-    override public func collectionView(_collectionView: UICollectionView,
+    override public func collectionView(_ collectionView: UICollectionView,
                                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtCell
         
         artCell.backgroundColor = .blue
         artCell.imageView.image = artSelection [indexPath.row]
-        artCell.image.text = " My Art"
+        artCell.imageName.text = " My Art"
         
         return artCell
     }
     
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
-                               sizeForItemAt indexPath: IndexPath) -> CGSize{
+                               sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        if indexPath == largePhotoIndexPath
+        {
+            let art = artSelection[indexPath.row]
+            let size = collectionView.bounds.size
+            let widthScale = (size.width / art!.size.width)  * CGFloat(0.80)
+            let largeSize = CGSize(width: art!.size.width * widthScale, height: art!.size.height * widthScale)
         
-     if indexPath == largePhotoIndexPath
-     {
+            return largeSize
+        }
 
-    let art = artSelection[indexPath.row]
-    let size = collectionView.bounds.size
-    let widthScale = (size.width / art!.size.width)  * CGFloat(0.80)
-    let largeSize = CGSize(width: art!.size.width * widthScale, height: art!.size.height * widthScale)
-    
-    return largeSize
-
-    }
-
-    let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-    let availableWidth = view.frame.width - paddingSpace
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
 
         return CGSize(width: widthPerItem, height: widthPerItem)
+    }
 
-
-        public func collectionView(_collectionView:UICollectionView,
+    public func collectionView(_collectionView:UICollectionView,
                            layout collectionViewLayout: UICollectionViewLayout,
                            insetForSectionAT section: Int) -> UIEdgeInsets
     {
-    return sectionInsets
+        return sectionInsets
     }
 
-    override public func collectionView(_collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool
+    override public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool
     {
         if largePhotoIndexPath == indexPath
         {

@@ -11,6 +11,7 @@ import UIKit
 public class AlgorithmViewController: UIViewController
 {
     
+    @IBOutlet weak var algorithmText: UILabel!
     
    
     private func setupAlgorithm() -> Void
@@ -26,8 +27,8 @@ public class AlgorithmViewController: UIViewController
         //todo: Finish adding all steps to the algorithm
         algorithmSteps = [stepOne, stepTwo, stepThree]
     
-        let attributesDictionary = [NSAttributedStringKey.font : algorithmSteps.font]
-        let fullAttributedString = NSMutableAttributedString(String: algorithm, attributes : attributesDictionary)
+        let attributesDictionary = [NSAttributedStringKey.font : algorithmText.font]
+        let fullAttributedString = NSMutableAttributedString(string: algorithm, attributes : attributesDictionary)
     
         for step in algorithmSteps
         {
@@ -43,7 +44,7 @@ public class AlgorithmViewController: UIViewController
             fullAttributedString.append(attributedStringStep)
     
         }
-        algorithm.attributedText = fullAttributedString
+        algorithmText.attributedText = fullAttributedString
     }
     private func createParagraphStyle() -> NSParagraphStyle
     
@@ -51,7 +52,7 @@ public class AlgorithmViewController: UIViewController
         
     
     
-        let paragraphStyle: NSMuttableParagraphStyle = NSMuttableParagraphStyle();
+        let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle();
         paragraphStyle.alignment = .left
         paragraphStyle.defaultTabInterval = 15
         paragraphStyle.firstLineHeadIndent = 20

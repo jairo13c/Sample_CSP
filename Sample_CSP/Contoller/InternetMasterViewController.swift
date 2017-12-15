@@ -26,7 +26,7 @@ public class InternetMasterViewController: UITableViewController
     
     private lazy var addresses: [String] = []
     
-    private var detailViewController : InternetDatailViewController?
+    private var detailViewController : InternetDetailViewController?
     
     private func setup() -> Void
     {
@@ -53,7 +53,7 @@ public class InternetMasterViewController: UITableViewController
         super.viewDidLoad()
         setup()
         //Uncomment the following line to prese selection between presentations
-        self.clearSelectionViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
         
     }
     
@@ -69,13 +69,13 @@ public class InternetMasterViewController: UITableViewController
     {
         return internetTopics.count
     }
-    override public func tableView(_ UITableView, UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    override public func tableView(_ tableView : UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-    let cell = tableView.dequeueReusbleCell(withIdentifier: "reuseIdentifier", for: indexPath)
-    let currentText = internetTopics[indexPath.row]
-    cell.textLabel!.text = currentText
-   
-    return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let currentText = internetTopics[indexPath.row]
+        cell.textLabel!.text = currentText
+        
+        return cell
     }
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -87,22 +87,23 @@ public class InternetMasterViewController: UITableViewController
                 let pageText : String
                 if indexPath.row == 0
                 {
-                    pageText = " All the efinition you wrote"
+                    pageText = " All thed efinition you wrote"
                 }
                 else
-                }
+                {
                     pageText = internetTopics[indexPath.row]
                 }
                 let controller = segue.destination as! InternetDetailViewController
-                    
-                    controller.detailAddress = urlString
-                    controller.detailText = pageText
-                    controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                    controller.navigationItem.leftItemsSupplementBackButton = true
+                
+                controller.detailAddress = urlString
+                controller.detailText = pageText
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
                 
             }
         }
-
+    }
+}
 
 
 

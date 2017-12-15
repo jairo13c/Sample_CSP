@@ -50,7 +50,7 @@ public class InternetDetailViewController: UIViewController
         {
             if let currentWebView = webViewer
             {
-                let currentURL = URL(String: detailAddress!)
+                let currentURL = URL(string: (detailAddress)!)
                 let currentWebRequest = URLRequest(url: currentURL!)
                 currentWebView.load(currentWebRequest)
             }
@@ -65,14 +65,14 @@ public class InternetDetailViewController: UIViewController
         }
         if detailText != nil
         {
-            if let currentText = textView
+            if let currentText = textLabel
             {
                 currentText.text = detailText
             }
         }
         else
         {
-            if let currentText = textView
+            if let currentText = textLabel
             {
                 currentText.text = "jairo's CSP app internt screen"
             }

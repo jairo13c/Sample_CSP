@@ -18,7 +18,7 @@ public class Projectile: SKSpriteNode
         super.init(texture: texture, color: SKColor.clear, size: texture.size())
         if( bulletSound != nil)
         {
-            run(SKAction.PlaySoundFileNamed(bulletSound!, waitForCompletion: false))
+            run(SKAction.playSoundFileNamed(bulletSound!, waitForCompletion: false))
         }
         
     }

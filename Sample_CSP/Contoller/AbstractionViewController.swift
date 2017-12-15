@@ -9,7 +9,7 @@
 import UIKit
 
 public class AbstractionViewController: UIPageViewController, UIPageViewControllerDataSource
-
+    
 {
     //mark: Array of subviews
     private (set) lazy var orderedAbstractionViews : [UIViewController] =
@@ -25,9 +25,9 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
     
     //helper method to retive he correct ViewController
     private func newAbstractionViewController(abstractionLevel : String) -> UIViewController
-{
-    return UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
-    
+    {
+        return UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
+        
     }
     override public func viewDidLoad()
     {
@@ -37,48 +37,85 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         if let firstViewController = orderedAbstractionViews.first
         {
             setViewControllers([firstViewController],
-                               direction: forward,
+                               direction: .forward,
                                animated: true,
                                completion:nil)
             
         }
     }
+    
     //mark:- Required protocol methods forr UIPgeViewControllerDatasource
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
+    
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
-    guard let viewControllerIndex = orderedAbstractionViews.index(of: viewController)
-    else
-    {
-        return nil
-    }
-
-    let nextIndex = viewControllerIndex + 1
+        guard let viewControllerIndex = orderedAbstractionViews.index(of: viewController)
+            else
+        {
+            return nil
+        }
         
-    guard nextIndex >= 0
-    else
-    {
-        return nil
+        let nextIndex = viewControllerIndex + 1
         
-    }
-       guard nextIndex < orderedAbstractionViews.count
-        else
-       {
-          return orderedAbstractionViews.first
+        guard nextIndex >= 0
+            else
+        {
+            return nil
+            
+        }
+        guard nextIndex < orderedAbstractionViews.count
+            else
+        {
+            return orderedAbstractionViews.first
         }
         return orderedAbstractionViews[nextIndex]
-
-}
-    public func presentationIndex(for pageViewController: UIPageViewControllerIndex = orderedAbstractionViews.index(of: firstViewController),
-    else
+        
+    }
+    
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
+    {
+        guard let viewControllerIndex = orderedAbstractionViews.index(of: viewController)
+            else
+        {
+            return nil
+        }
+        
+        let nextIndex = viewControllerIndex + 1
+        
+        guard nextIndex >= 0
+            else
+        {
+            return nil
+            
+        }
+        guard nextIndex < orderedAbstractionViews.count
+            else
+        {
+            return orderedAbstractionViews.first
+        }
+        return orderedAbstractionViews[nextIndex]
+        
+    }
+    public func presentationCount(for pageViewController: UIPageViewController) -> Int
     {
         return orderedAbstractionViews.count
     }
-    return firstViewControllerIndex
+    public func presentationIndex(for pageViewController: UIPageViewController) -> Int
+    {
+        guard let firstViewController = viewControllers?.first,let firstViewControllerIndex =
+            orderedAbstractionViews.index(of: firstViewController)
+            else
+        {
+            return 0
+        }
     
+        return firstViewControllerIndex
     }
+}
 
-    
-    
+
+
+
+
 
 
 
