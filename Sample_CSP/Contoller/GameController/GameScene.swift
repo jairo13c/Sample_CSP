@@ -93,22 +93,52 @@ public class GameScene: SKScene, SKPhysicsContactDelegate
     
     private func invokeInvaderFire() -> Void
     {
+        let fireBullet = SKAction.run()
+        {
+            self.fireInvaderBullet()
+        }
+        let waitToFireInvderBullet = SKAction.wait(forDuration:2.0)
+        let inaderFire = SKAction.sequence([fireBullet,waitToFireInvderBullet])
+        let repeatToFireAction = SKAction.repeatForever(inaderFire)
+        run(repeatToFireAction)
         
     }
     
     func fireInvaderBullet() -> Void
     {
-        
+        if(invadersThatCanFire.isEmpty)
+        {
+                gameLevel += 1
+                levelComplete()
+        }
+            if let randomInvader = invadersThatCanFire.randomElement()
+        {
+            randomInvader.fireBullet(scene: self)
+        }
     }
     
     func newGame() -> Void
     {
-        
+        let newGameScene = StartScene(size: size)
+        newGameScene.scaleMode = scaleMode
+        let transationType = SKTransition.flipHorizontal(withDuration: 0.5)
+        view?.presentScene(newGameScene, transition: transationType)
     }
     
     func levelComplete() -> Void
     {
-        
+        if(gameLevel <= maxLevels)
+        {
+            let newGameScene = StartScene(size: size)
+            newGameScene.scaleMode = scaleMode
+            let transationType = SKTransition.flipHorizontal(withDuration: 0.5)
+            view?.presentScene(newGameScene, transition: transationType)
+        }
+        else
+        {
+           gameLevel = 1
+           newGame()
+        }
     }
     
     
@@ -137,17 +167,18 @@ public class GameScene: SKScene, SKPhysicsContactDelegate
     
     override public func update(_ currentTime: CFTimeInterval) -> Void
     {
-        
+        moveInvaders()
     }
     
     override public func didSimulatePhysics()
     {
-        
+        player.physicsBody?.velocity = CGVector(dx: accelerationX * 600,dy: 0)
     }
     
     //MARK:- Handle Motion
     func setupAccelerometer() -> Void
     {
+        
         motionManager.accelerometerUpdateInterval = 0.2
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler:
             {

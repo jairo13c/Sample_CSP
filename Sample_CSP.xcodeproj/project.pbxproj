@@ -28,9 +28,13 @@
 		423F880B1FE1AFFE00DDFAF7 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423F88081FE1AFFE00DDFAF7 /* StartScene.swift */; };
 		424129651FCC98360015D549 /* AbstractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424129641FCC98360015D549 /* AbstractionViewController.swift */; };
 		427919C51FC363DD00E4660F /* Ducking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427919C41FC363DD00E4660F /* Ducking.swift */; };
+		42A0ACBB1FE9A560002F5BA2 /* DeathScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0ACBA1FE9A560002F5BA2 /* DeathScene.swift */; };
+		42B6B24F200543DD00DFEBDD /* BucketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6B24E200543DD00DFEBDD /* BucketItemCell.swift */; };
+		42B6B2512005440300DFEBDD /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6B2502005440300DFEBDD /* DataViewController.swift */; };
+		42B6B2532005493300DFEBDD /* bucket.csv in Resources */ = {isa = PBXBuildFile; fileRef = 42B6B2522005493200DFEBDD /* bucket.csv */; };
 		42C267C01FE1B1AA002DFC43 /* Invader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C267BB1FE1B1AA002DFC43 /* Invader.swift */; };
 		42C267C11FE1B1AA002DFC43 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C267BC1FE1B1AA002DFC43 /* Projectile.swift */; };
-		42C267C21FE1B1AA002DFC43 /* PlayerLaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C267BD1FE1B1AA002DFC43 /* PlayerLaser.swift */; };
+		42C267C21FE1B1AA002DFC43 /* playerLaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C267BD1FE1B1AA002DFC43 /* playerLaser.swift */; };
 		42C267C31FE1B1AA002DFC43 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C267BE1FE1B1AA002DFC43 /* Player.swift */; };
 		42C267C41FE1B1AA002DFC43 /* InvaderLaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C267BF1FE1B1AA002DFC43 /* InvaderLaser.swift */; };
 		42C267C61FE1B206002DFC43 /* StarField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 42C267C51FE1B206002DFC43 /* StarField.sks */; };
@@ -63,9 +67,13 @@
 		423F88081FE1AFFE00DDFAF7 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		424129641FCC98360015D549 /* AbstractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractionViewController.swift; sourceTree = "<group>"; };
 		427919C41FC363DD00E4660F /* Ducking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ducking.swift; sourceTree = "<group>"; };
+		42A0ACBA1FE9A560002F5BA2 /* DeathScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathScene.swift; sourceTree = "<group>"; };
+		42B6B24E200543DD00DFEBDD /* BucketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketItemCell.swift; sourceTree = "<group>"; };
+		42B6B2502005440300DFEBDD /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		42B6B2522005493200DFEBDD /* bucket.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bucket.csv; path = ../../../../Downloads/bucket.csv; sourceTree = "<group>"; };
 		42C267BB1FE1B1AA002DFC43 /* Invader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invader.swift; sourceTree = "<group>"; };
 		42C267BC1FE1B1AA002DFC43 /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
-		42C267BD1FE1B1AA002DFC43 /* PlayerLaser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerLaser.swift; sourceTree = "<group>"; };
+		42C267BD1FE1B1AA002DFC43 /* playerLaser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerLaser.swift; sourceTree = "<group>"; };
 		42C267BE1FE1B1AA002DFC43 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		42C267BF1FE1B1AA002DFC43 /* InvaderLaser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvaderLaser.swift; sourceTree = "<group>"; };
 		42C267C51FE1B206002DFC43 /* StarField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarField.sks; sourceTree = "<group>"; };
@@ -104,14 +112,15 @@
 		423ADFFC1FB3942300820416 /* Sample_CSP */ = {
 			isa = PBXGroup;
 			children = (
-				423F88161FE1B05F00DDFAF7 /* model */,
-				427919C11FC361A800E4660F /* protocol */,
 				423AE0161FB396D300820416 /* Contoller */,
-				423ADFFB1FB3942300820416 /* Products */,
-				423AE0061FB3942300820416 /* LaunchScreen.storyboard */,
-				423AE0091FB3942300820416 /* Info.plist */,
+				42B6B24D200543A700DFEBDD /* DataView */,
 				42E00B471FD72A1800966B4A /* view */,
 				424129661FCCA85F0015D549 /* resources */,
+				423F88161FE1B05F00DDFAF7 /* model */,
+				423ADFFB1FB3942300820416 /* Products */,
+				427919C11FC361A800E4660F /* protocol */,
+				423AE0061FB3942300820416 /* LaunchScreen.storyboard */,
+				423AE0091FB3942300820416 /* Info.plist */,
 			);
 			path = Sample_CSP;
 			sourceTree = "<group>";
@@ -152,6 +161,7 @@
 				423F88061FE1AFFE00DDFAF7 /* GameScene.swift */,
 				423F88071FE1AFFE00DDFAF7 /* LevelCompleteScene.swift */,
 				423F88081FE1AFFE00DDFAF7 /* StartScene.swift */,
+				42A0ACBA1FE9A560002F5BA2 /* DeathScene.swift */,
 			);
 			path = GameController;
 			sourceTree = "<group>";
@@ -162,7 +172,7 @@
 				42C267BB1FE1B1AA002DFC43 /* Invader.swift */,
 				42C267BF1FE1B1AA002DFC43 /* InvaderLaser.swift */,
 				42C267BE1FE1B1AA002DFC43 /* Player.swift */,
-				42C267BD1FE1B1AA002DFC43 /* PlayerLaser.swift */,
+				42C267BD1FE1B1AA002DFC43 /* playerLaser.swift */,
 				42C267BC1FE1B1AA002DFC43 /* Projectile.swift */,
 			);
 			path = model;
@@ -171,6 +181,7 @@
 		424129661FCCA85F0015D549 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				42B6B2522005493200DFEBDD /* bucket.csv */,
 				42C267C71FE1B216002DFC43 /* Utilities.swift */,
 				423F88031FE1AF1C00DDFAF7 /* sounds */,
 				423AE0041FB3942300820416 /* Assets.xcassets */,
@@ -184,6 +195,15 @@
 				427919C41FC363DD00E4660F /* Ducking.swift */,
 			);
 			path = protocol;
+			sourceTree = "<group>";
+		};
+		42B6B24D200543A700DFEBDD /* DataView */ = {
+			isa = PBXGroup;
+			children = (
+				42B6B24E200543DD00DFEBDD /* BucketItemCell.swift */,
+				42B6B2502005440300DFEBDD /* DataViewController.swift */,
+			);
+			path = DataView;
 			sourceTree = "<group>";
 		};
 		42E00B471FD72A1800966B4A /* view */ = {
@@ -257,6 +277,7 @@
 			files = (
 				423AE0081FB3942300820416 /* LaunchScreen.storyboard in Resources */,
 				423F88011FE1AF0900DDFAF7 /* boss sound.mp3 in Resources */,
+				42B6B2532005493300DFEBDD /* bucket.csv in Resources */,
 				423AE0051FB3942300820416 /* Assets.xcassets in Resources */,
 				423F87FE1FE1AF0900DDFAF7 /* powerup sound.mp3 in Resources */,
 				423F87FF1FE1AF0900DDFAF7 /* invader sound.mp3 in Resources */,
@@ -278,6 +299,7 @@
 				423F880B1FE1AFFE00DDFAF7 /* StartScene.swift in Sources */,
 				423AE0001FB3942300820416 /* ViewController.swift in Sources */,
 				423AE0181FB3974A00820416 /* NameOfViewController.swift in Sources */,
+				42B6B2512005440300DFEBDD /* DataViewController.swift in Sources */,
 				423AE01A1FB3993300820416 /* AlgorithmViewController.swift in Sources */,
 				424129651FCC98360015D549 /* AbstractionViewController.swift in Sources */,
 				4216DAD51FCF3AC000AF5DFB /* InternetDetailViewController.swift in Sources */,
@@ -288,11 +310,13 @@
 				42E00B491FD72ACB00966B4A /* DrawingView.swift in Sources */,
 				423F880A1FE1AFFE00DDFAF7 /* LevelCompleteScene.swift in Sources */,
 				42C267C11FE1B1AA002DFC43 /* Projectile.swift in Sources */,
-				42C267C21FE1B1AA002DFC43 /* PlayerLaser.swift in Sources */,
+				42B6B24F200543DD00DFEBDD /* BucketItemCell.swift in Sources */,
+				42C267C21FE1B1AA002DFC43 /* playerLaser.swift in Sources */,
 				42C267CA1FE1B363002DFC43 /* ProgrammingViewController.swift in Sources */,
 				4216DAD31FCF364A00AF5DFB /* InternetMasterViewController.swift in Sources */,
 				427919C51FC363DD00E4660F /* Ducking.swift in Sources */,
 				42C267C31FE1B1AA002DFC43 /* Player.swift in Sources */,
+				42A0ACBB1FE9A560002F5BA2 /* DeathScene.swift in Sources */,
 				42C267C81FE1B216002DFC43 /* Utilities.swift in Sources */,
 				4218B3BF1FD9D378006B8967 /* ArtCell.swift in Sources */,
 			);

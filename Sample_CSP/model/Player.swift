@@ -66,17 +66,34 @@ public class Player: SKSpriteNode
     
     public func die () -> Void
     {
-        
+        if(!invincible)
+        {
+            lives -= 1
+        }
     }
     
     public func kill() -> Void
     {
-    
+        gameLevel = 1
+        
+        let gameOverScene = DeathScene(size: self.scene!.size)
+        gameOverScene.scaleMode = self.scene!.scaleMode
+        let transitionType = SKAction.flipHorizontal(withDuration: 1)
+        self.scene!.view!.presentScene(gameOverScene,transition: transitionType)
     }
     
     public func respawn() -> Void
     {
-        
+        invincible = true
+        let fadeOutActtion = SKAction.fadeOut(withDuration: 0.4)
+        let fadeINAction = SKAction.fadeIn(withDuration: 0.4)
+        let fadeOUTIN = SKAction.fadeIn(withDuration,fadeInAction)
+        let fadeOutInAction = SKAction.repeat(fadeOUTIN,Count: 5)
+        let setInvaicibleFalse = SKAction.run()
+        {
+            self.invincible = false
+        }
+        run(SKAction.sequence([fadeOutInAction,setInvicibleFalse]))
     }
     
     public func fireBullet(scene: SKScene) -> Void
